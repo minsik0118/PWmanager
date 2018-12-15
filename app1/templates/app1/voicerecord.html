@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>record form</title>
+</head>
+<body>
+	<h3> {{name}} 님 로그인을 위해 목소리를 녹음하세요. <h3>
+	<form method="post" action="/account/">
+	{%csrf_token%}
+	<label> <input type="hidden" name="loginid" id="loginid" value={{loginid}} </label><
+	<input type="submit" value="클릭">
+	</form>
+</body>
+</html>

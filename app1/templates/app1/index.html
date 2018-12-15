@@ -1,0 +1,38 @@
+<!-- C\Code\mysite\elections\templates\elections\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>로그인 대상</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>소개</B></td>
+            <td><B>로그인</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for webpage in webpages %}
+        <tr>
+            <td>{{webpage.name}}</td>
+            <td>{{webpage.intro}}</td>
+            <td><form method="post" action="/account1/">
+                {%csrf_token%}
+                <label> <input type="hidden" name="loginid" id="loginid" value={{loginid}} </label>
+                <label> <input type="hidden" name="name" id="name" value={{webpage.name}} </label>
+                <input type="submit" value="로그인">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+</body>

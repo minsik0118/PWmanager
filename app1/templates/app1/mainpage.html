@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login form</title>
+</head>
+<body>
+	<h3> 로그인하세요<h3>
+	
+	<form method="post" action="/login1/">
+		{%csrf_token%}
+		<label> ID : <input type="text" name="loginid" id="loginid" size="30" value=""></label><
+		<input type="submit" value="완료">
+	</form>
+</body>
+</html>
